@@ -1,15 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, ComponentType, ReactNode } from 'react'
+import { Loader } from '../Loader/Loader'
 
-// Definimos un tipo para las props del componente que se va a cargar
-type LoadableProps = {
-  [key: string]: any; // Esto es un tipo genérico, puedes hacer un tipo más específico si lo prefieres
-};
-
-// `Loadable` espera un componente que puede recibir props
-export function Loadable(Component: React.LazyExoticComponent<React.ComponentType<LoadableProps>>) {
-  return (props: LoadableProps) => (
-    <Suspense fallback={<div>Loading...</div>}>
+// Definir el tipo del componente que se pasará a la función Loadable
+export const Loadable = <P extends object>(Component: ComponentType<P>) => {
+  return (props: P): ReactNode => (
+    <Suspense fallback={<Loader />}>
       <Component {...props} />
     </Suspense>
-  );
+  )
 }
