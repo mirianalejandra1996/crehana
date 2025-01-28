@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import { CountryGrid, FiltersForm } from "../components";
 
-
-import { GET_COUNTRIES, GET_CONTINENTS } from "../graphql/queries";
+import { GET_COUNTRIES, GET_CONTINENTS } from "../graphql/queries/index";
 
 import { Country } from "../common/interfaces";
 

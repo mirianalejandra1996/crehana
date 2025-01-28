@@ -1,6 +1,6 @@
 import { Box, CircularProgress } from "@mui/material";
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <Box
       display="flex"
@@ -12,5 +12,3 @@ const Loader = () => {
     </Box>
   );
 };
-
-export default Loader;
